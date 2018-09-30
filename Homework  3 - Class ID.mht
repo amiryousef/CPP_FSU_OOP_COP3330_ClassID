@@ -1,0 +1,214 @@
+From: "Saved by Windows Internet Explorer 8"
+Subject: Homework 3
+Date: Mon, 26 Sep 2011 01:16:08 -0400
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01CC7BE9.DF385870"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.0.6002.18463
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01CC7BE9.DF385870
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.cs.fsu.edu/~lacher/courses/COP3330/assigns/hw3.html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Homework 3</TITLE>
+<META content=3D"text/html; charset=3Dwindows-1252" =
+http-equiv=3DContent-Type>
+<META name=3DGENERATOR content=3D"MSHTML 8.00.6001.19120">
+<STYLE type=3Dtext/css>@import url( =
+http://www.cs.fsu.edu/~lacher/styles/RCLstyle1.css );
+</STYLE>
+</HEAD>
+<BODY aLink=3D#808080 link=3Dblack vLink=3Dblack><!--=0A=
+<center>=0A=
+<h1><font color=3D#990000>DRAFT: Open for comment in the discussion =
+forum.</font></h1>=0A=
+</center>=0A=
+-->
+<CENTER>
+<H1>Homework 3: Class ID</H1></CENTER>
+<P><B>Educational Objectives.</B> After successfully completing this =
+assignment,=20
+the student should be able to accomplish the following: </P>
+<UL>
+  <LI>Design a class based on non-language-specific specifications=20
+  <LI>Implement a class of your own design=20
+  <LI>Implement constructors, copy constructor, destructor, and =
+assignment=20
+  operator for a class that has resource allocation requirements=20
+  <LI>Implement Set and Get methods for class data=20
+  <LI>Correctly separate class definition and implementation using files =
+
+  <LI>Create executables of class client programs using makefiles and =
+the Make=20
+  utility=20
+  <LI>Test a class using specs and an existing test platform </LI></UL>
+<P><STRONG>Operational Objectives:</STRONG> Define and implement the =
+class=20
+<TT>ID</TT> and deliver the code in two files <TT>id.h</TT> and =
+<TT>id.cpp</TT>=20
+along with a makefile for the supplied test harness. </P>
+<P><STRONG>Deliverables:</STRONG> <TT>id.h</TT>, <TT>id.cpp</TT>,=20
+<TT>makefile</TT> </P>
+<H2>Background</H2>
+<P>See lecture notes <A=20
+href=3D"http://www.cs.fsu.edu/~lacher/courses/COP3330/lectures/classes1/t=
+oc.html"=20
+target=3D_blank>Chapter 4. Classes Part 1</A>, <A=20
+href=3D"http://www.cs.fsu.edu/~lacher/courses/COP3330/lectures/pointers/t=
+oc.html"=20
+target=3D_blank>Chapter 5. Pointers</A>, <A=20
+href=3D"http://www.cs.fsu.edu/~lacher/courses/COP3330/lectures/classes2/t=
+oc.html"=20
+target=3D_blank>Chapter 6. Classes Part 2</A>, and <A=20
+href=3D"http://www.cs.fsu.edu/~lacher/courses/COP3330/lectures/strings/to=
+c.html"=20
+target=3D_blank>Chapter 7: String Objects</A>. </P>
+<H2>Procedural Requirements:</H2>
+<OL type=3D1>
+  <LI>
+  <P>Design the class ID</P>
+  <LI>
+  <P>Implement the class ID with the class definition in file =
+<TT>id.h</TT> and=20
+  the class implementation in file <TT>id.cpp</TT></P>
+  <LI>
+  <P>Thoroughly test class ID, starting out with the supplied test =
+harness in=20
+  file <TT>hw3/test.cpp</TT> using command line compile</P>
+  <LI>
+  <P>Write a makefile that builds <TT>test.x</TT> with the "in lieu of =
+makefile"=20
+  include statement commented out or removed</P>
+  <LI>
+  <P>Test the executable again, and refine your work to withstand =
+testing.
+  <P></P>
+  <LI>
+  <P>Turn in <TT>id.h</TT>, <TT>id.cpp</TT>, and <TT>makefile</TT> using =
+the=20
+  <TT>hw3submit.sh</TT> submit script. </P>
+  <P><EM><B>Warning:</B> Submit scripts do not work on the =
+<TT>program</TT> and=20
+  <TT>linprog</TT> servers. Use <TT>shell.cs.fsu.edu</TT> to submit =
+projects. If=20
+  you do not receive the second confirmation with the contents of your =
+project,=20
+  there has been a malfunction.</EM> </P></LI></OL>
+<H2>Technical Requirements and Specifications</H2>
+<OL>
+  <LI>
+  <P>The class should implement the following diagram:=20
+  <P>
+  <TABLE border=3D4 cellSpacing=3D0>
+    <TBODY>
+    <TR>
+      <TD vAlign=3Dtop><EM>Class Name:</EM></TD>
+      <TD><PRE>  ID</PRE></TD></TR>
+    <TR>
+      <TD vAlign=3Dtop><EM>Services&nbsp;:</EM>&nbsp; </TD>
+      <TD><PRE>  void        SetName ( const char* ) // sets the name =
+field
+  void        SetAge  ( int )         // sets the age field
+  const char* GetName () const        // returns a const pointer to the =
+name field
+  int         GetAge  () const        // returns the age field by value
+</PRE></TD></TR>
+    <TR>
+      <TD vAlign=3Dtop><EM>Properties&nbsp;:</EM>&nbsp; </TD>
+      <TD><PRE>  Constructable: objects can be declared as ordinary =
+variables
+  Assignable:    objects can be assigned one to another
+  Passable:      objects can be passed by value to and returned as =
+values from functions&nbsp;&nbsp;
+</PRE></TD></TR>
+    <TR>
+      <TD vAlign=3Dtop><EM>Private variables:</EM></TD>
+      <TD><PRE>  char * name_  // the name field
+  int    age_   // the age field
+</PRE></TD></TR></TBODY></TABLE></TD></TR></TABLE></P>
+  <LI>
+  <P>The class should be a proper type, to include default constructor,=20
+  2-argument constructor (that initializes the two data fields), copy=20
+  constructor, assignment operator, and destructor. </P>
+  <LI>
+  <P>The output operator <TT>operator&lt;&lt; </TT>should be overloaded =
+for the=20
+  type <TT>ID</TT>. </P>
+  <LI>
+  <P>Class ID should pass testing with the supplied =
+<TT>hw3/test.cpp</TT> with=20
+  no compile or runtime errors and no compiler warnings when the warning =
+flags=20
+  <TT>-W</TT>, <TT>-Wall</TT>, <TT>-Wextra</TT> are set. </P>
+  <LI>
+  <P>Building and running the supplied <TT>hw3/test.cpp</TT> should =
+result in=20
+  output identical to the supplied executable <TT>area51/IDtest_?.x</TT> =
+[? =3D=20
+  <TT>i</TT> or <TT>s</TT>] . </P></LI></OL><!--=0A=
+<p><strong>Hints</strong></p>=0A=
+=0A=
+<ul>=0A=
+<li></li>=0A=
+<li></li>=0A=
+<li></li>=0A=
+<li></li>=0A=
+<li></li>=0A=
+<li></li>=0A=
+</ul>=0A=
+--></BODY></HTML>
+
+------=_NextPart_000_0000_01CC7BE9.DF385870
+Content-Type: text/css;
+	charset="windows-1256"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.cs.fsu.edu/~lacher/styles/RCLstyle1.css
+
+PRE {
+	FONT-FAMILY: Courier New, Fixedsys; FONT-SIZE: 10pt
+}
+TT {
+	FONT-FAMILY: Courier New, Fixedsys; FONT-SIZE: 10pt
+}
+P {
+	FONT-FAMILY: Verdana, sans-serif; FONT-SIZE: 10pt
+}
+H1 {
+	FONT-FAMILY: Verdana, sans-serif; FONT-SIZE: 12pt; FONT-WEIGHT: bold
+}
+H2 {
+	FONT-FAMILY: Verdana, sans-serif; FONT-SIZE: 10pt; FONT-WEIGHT: bold
+}
+H3 {
+	FONT-FAMILY: Verdana, sans-serif; FONT-SIZE: 10pt; FONT-WEIGHT: bold
+}
+UL {
+	FONT-FAMILY: Verdana, sans-serif; FONT-SIZE: 10pt
+}
+LI {
+	FONT-FAMILY: Verdana, sans-serif; FONT-SIZE: 10pt
+}
+DL {
+	FONT-FAMILY: Verdana, sans-serif; FONT-SIZE: 10pt
+}
+DT {
+	FONT-FAMILY: Verdana, sans-serif; FONT-SIZE: 10pt
+}
+DD {
+	FONT-FAMILY: Verdana, sans-serif; FONT-SIZE: 10pt
+}
+EM {
+	FONT-STYLE: italic; FONT-FAMILY: Verdana, sans-serif; COLOR: #990000; =
+FONT-SIZE: 10pt
+}
+TD {
+	FONT-FAMILY: Verdana, sans-serif; FONT-SIZE: 10pt
+}
+
+------=_NextPart_000_0000_01CC7BE9.DF385870--
